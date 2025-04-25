@@ -34,7 +34,7 @@ const MainPage = () => {
             <option key={opt} value={opt}>{opt}</option>
           ))}
         </select>
-        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded absolute top-8 right-0">
+        <button type="submit" className="bg-slate-800 text-slate-300 px-4 py-2 rounded absolute top-8 right-0">
           Zobacz szczegóły
         </button>
       </form>
