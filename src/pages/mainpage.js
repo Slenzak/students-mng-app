@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { getClasses } from "../utility/storage";
+import { getClasses,initData } from "../utility/storage";
 
 const MainPage = () => {
   const [selectedClass, setSelectedClass] = useState("");
@@ -17,21 +17,24 @@ const MainPage = () => {
       navigate(`/class/${selectedClass}`);
     }
   };
+  useEffect(() =>{
+    initData();
+  },[]);
 
   return (
-    <div className="max-w-md mx-auto mt-10">
-      <form onSubmit={handleSubmit} className="space-y-4">
+    <div className="max-w-md mx-auto mt-10 ">
+      <form onSubmit={handleSubmit} className="space-y-4 relative">
       <select
           className="border rounded p-2 w-full"
           value={selectedClass}
           onChange={(e) => setSelectedClass(e.target.value)}
         >
-          <option value="">Wybierz klasę</option>
+          <option value="" disabled>Wybierz klasę</option>
           {classNames.map((opt) => (
             <option key={opt} value={opt}>{opt}</option>
           ))}
         </select>
-        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
+        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded absolute top-8 right-0">
           Zobacz szczegóły
         </button>
       </form>

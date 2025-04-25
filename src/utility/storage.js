@@ -1,32 +1,7 @@
+import { InitalData } from "./initialdata";
 const initData = () => {
     if (!localStorage.getItem("classes")) {
-      const sample = [
-        {
-          name: "1A",
-          teacher: "Piotr Dobosz",
-          students: [
-            { firstName: "Michal", lastName: "Wieczorek", average: 4.75 },
-            { firstName: "Mateusz", lastName: "Góral", average: 1.5 }
-          ]
-        },
-        {
-          name: "2B",
-          teacher: "Patryk Jaksender",
-          students: [
-            { firstName:"Milosz", lastName:"Gruca", average:5.5},
-            { firstName:"Ksawier", lastName:"Babelewski", average:4.25}
-          ]
-        },
-        {
-            name: "1C",
-            teacher: "Profesor Adrian Bak",
-            students: [
-                { firstName:"Krzys",lastName:"Chudaszek", average:5.5},
-                { firstName:"Jakub",lastName:"Chudaszek", average:6}
-            ]
-        }
-      ];
-      localStorage.setItem("classes", JSON.stringify(sample));
+      localStorage.setItem("classes", JSON.stringify(InitalData));
     }
   };
   
